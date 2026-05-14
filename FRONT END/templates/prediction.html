@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+    <li><a class="nav-link scrollto" href="{{ url_for('home') }}" style="font-size: 15px;">Home</a></li>
+    <li><a class="nav-link scrollto" href="{{ url_for('about') }}" style="font-size: 15px;">About</a></li>
+    <li><a class="nav-link scrollto active" href="{{ url_for('prediction') }}" style="font-size: 15px;">Prediction</a></li>
+    <li><a class="nav-link scrollto" href="{{ url_for('index') }}" style="font-size: 15px;">LogOut</a></li>
+{% endblock %}
+
+{% block content %}
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row mt-5">
+                <center>
+                    <div class="col-lg-6">
+                        <form action="{{ url_for('prediction') }}" method="post" role="form" class="php-email-form" style="margin-top: 0px;">
+                            <div class="section-title">
+                                <h2>Prediction</h2>
+                            </div>
+
+                            {% if prediction %}
+                                <h2 style="color: green;">Result : {{ prediction }}</h2>
+                            {% endif %}
+
+                            {% if data %}
+                                {% for key, values in data.items() %}
+                                    <div class="form-group mt-3">
+                                        <select name="{{ key }}" class="form-control" required>
+                                            <option hidden>Choose {{ key }}</option>
+                                            {% for value in values %}
+                                                <option value="{{ value[1] }}">{{ value[0] if value[0] != "--" else "Others" }}</option>
+                                            {% endfor %}
+                                        </select><br>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+
+                            <div class="form-group mt-3">
+                                <input type="number" step="0.001" class="form-control" name="Age_at_diagnosis" placeholder="Enter Age at diagnosis (e.g, 51.3 -  means 51 years 108 days)" required>
+                            </div><br>
+
+                            <div class="text-center">
+                                <button type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </section>
+{% endblock %}

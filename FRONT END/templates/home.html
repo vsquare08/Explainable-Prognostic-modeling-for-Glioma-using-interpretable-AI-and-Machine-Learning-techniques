@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+
+{% block navbar %}
+    <li><a class="nav-link scrollto active" href="{{url_for('home')}}" style="font-size: 15px;">Home</a></li>
+    <li><a class="nav-link scrollto" href="{{url_for('about')}}" style="font-size: 15px;">About</a></li>
+    <li><a class="nav-link scrollto" href="{{url_for('prediction')}}" style="font-size: 15px;">Prediction</a></li>
+    <li><a class="nav-link scrollto" href="{{url_for('index')}}" style="font-size: 15px;">LogOut</a></li>
+{% endblock %}
+
+
+{% block content %}
+    <section id="hero">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active" style="background-image: url(/static/img/background2.webp)">
+            <div class="container">
+                <h2>Welcome to <span></span></h2>
+                <p>Empowering Glioma Prognosis with Transparent machine learning and Interpretatve insights using explainable AI</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+{% endblock %}

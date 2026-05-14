@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+
+{% block navbar %}
+    <li><a class="nav-link scrollto" href="{{url_for('home')}}" style="font-size: 15px;">Home</a></li>
+    <li><a class="nav-link scrollto active" href="{{url_for('about')}}" style="font-size: 15px;">About</a></li>
+    <li><a class="nav-link scrollto" href="{{url_for('prediction')}}" style="font-size: 15px;">Prediction</a></li>
+    <li><a class="nav-link scrollto" href="{{url_for('index')}}" style="font-size: 15px;">LogOut</a></li>
+{% endblock %}
+
+
+{% block content %}
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up" style="margin-top: 50px;">
+            <div class="section-title">
+                <h2>About</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                <img src="/static/img/about.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+                <p class="fst-italic" style="text-align: justify;">
+                    Gliomas, among the most prevalent and aggressive brain tumors, pose significant challenges in prognosis and treatment planning. Conventional machine learning models, while effective in predicting outcomes, often lack transparency and interpretability, hindering clinical adoption and trust. This project introduces a novel approach to glioma prognosis utilizing Explainable Artificial Intelligence (XAI) techniques to enhance model transparency and provide interpretable insights into predictive factors. We develop a framework that integrates machine learning algorithms with XAI methods, such as SHAP (SHapley Additive exPlanations) and LIME (Local Interpretable Model-agnostic Explanations), to elucidate the decision-making processes of the predictive models. Our methodology not only predicts patient outcomes with high accuracy but also presents clear, actionable insights that clinicians can use to tailor individual treatment plans. The integration of XAI into glioma prognosis represents a significant advancement in neuro-oncology, promoting better patient outcomes through personalized, data-driven treatment strategies.
+                </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

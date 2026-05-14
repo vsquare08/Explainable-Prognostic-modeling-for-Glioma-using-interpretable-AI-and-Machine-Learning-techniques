@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+
+{% block navbar %}
+    <li><a class="nav-link scrollto" href="{{url_for('index')}}" style="font-size: 15px;">Home</a></li>
+    <li><a class="nav-link scrollto" href="{{url_for('register')}}" style="font-size: 15px;">Register</a></li>
+    <li><a class="nav-link scrollto active" href="{{url_for('login')}}" style="font-size: 15px;">Login</a></li>
+{% endblock %}
+
+
+{% block content %}
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row mt-5">
+                <center>
+                    <div class="col-lg-6">
+                        <form action="{{url_for('login')}}" method="post" role="form" class="php-email-form" style="margin-top: 0px;">
+                            
+                            <div class="section-title">
+                                <h2>Login</h2>
+                            </div>
+    
+                            <div class="form-group mt-3">
+                                <input type="email" class="form-control" name="email" placeholder="Email ID" required>
+                            </div>
+    
+                            <div class="form-group mt-3">
+                                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            </div><br>
+    
+                            <div class="text-center"><button type="submit">Submit</button></div>
+                        </form>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </section>
+{% endblock %}

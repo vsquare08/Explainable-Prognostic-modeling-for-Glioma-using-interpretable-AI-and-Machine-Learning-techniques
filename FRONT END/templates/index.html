@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Empowering Glioma Prognosis with Transparent machine learning and Interpretatve insights using explainable AI</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/img/favicon.png" rel="icon">
+  <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/static/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header id="header" class="fixed-top" style="margin-top: -50px;">
+    <div class="container d-flex align-items-center">
+
+      <a href="#" class="logo me-auto" style="font-size: 25px;">
+        <img src="/static/img/icon.png" alt="">
+        <b style="margin-left: 10px;">Glioma Prognosis Enhancement</b>
+      </a>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          {% block navbar %}
+            <li><a class="nav-link scrollto active" href="{{url_for('index')}}" style="font-size: 15px;">Home</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('register')}}" style="font-size: 15px;">Register</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('login')}}" style="font-size: 15px;">Login</a></li>
+          {% endblock %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  {% block content %}
+    <section id="hero">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active" style="background-image: url(/static/img/background1.jpg)">
+            <div class="container">
+              <h2>Welcome to <span></span></h2>
+              <p>Empowering Glioma Prognosis with Transparent machine learning and Interpretatve insights using explainable AI</p>
+              <a href="{{url_for('register')}}" class="btn-get-started scrollto">Register</a>
+              <a href="{{url_for('login')}}" class="btn-get-started scrollto">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endblock %}
+
+  {% if message %}
+    <script>
+      alert("{{ message }}")        
+    </script>
+  {% endif %}
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/static/vendor/aos/aos.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- <script src="/static/vendor/php-email-form/validate.js"></script> -->
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>
